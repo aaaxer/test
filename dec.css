@@ -29,14 +29,14 @@ h1{
 p{
     margin: auto 3% auto auto;
     font-weight: 400;
-    font-size: 60px;
+    font-size: 300%;
     color: var(--textcolor);
 }
 
 #IDcard{
     width: 100vw;
     display: flex;
-    height: 300px;
+    height: 24vw;
     background-color: var(--bgcolor);
     border-bottom: 5px solid var(--textcolor);
     margin-bottom: 50px;
@@ -45,7 +45,7 @@ p{
 .chance{
     transform: skewX(-10deg);
     margin: 0 0 30px 30px;
-    height: 8vw;
+    height: 5vw;
     width: 80vw;
     display: flex;
     align-items: center;
