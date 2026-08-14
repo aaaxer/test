@@ -9,7 +9,7 @@ body{
 }
 
 img{
-    height: 320px;
+    height: 102%;
     box-shadow: 5px 0 7px 7px rgba(0, 0, 0, 0.5);
     border-radius: 0 15%;
     transition: transform 1s ease;
@@ -21,19 +21,20 @@ img:hover{
 
 h1{
     position: absolute;
-    right: 20px;
+    right: 2%;
     background: linear-gradient(45deg,var(--textcolor),var(--bgcolor));
     -webkit-background-clip:text;
     -webkit-text-fill-color: transparent;
 }
 p{
-    margin: auto 70px auto auto;
+    margin: auto 3% auto auto;
     font-weight: 400;
     font-size: 60px;
     color: var(--textcolor);
 }
 
 #IDcard{
+    width: 100vw;
     display: flex;
     height: 300px;
     background-color: var(--bgcolor);
@@ -44,8 +45,8 @@ p{
 .chance{
     transform: skewX(-10deg);
     margin: 0 0 30px 30px;
-    height: 100px;
-    width: 1000px;
+    height: 8vw;
+    width: 80vw;
     display: flex;
     align-items: center;
     background-color: var(--bgcolor);
