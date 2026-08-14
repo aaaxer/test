@@ -1,28 +1,33 @@
+@font-face {
+    font-family: '我的字体';
+    src: url(YouSheBiaoTiHei-2.ttf)format('truetype'),
+         url(YouSheBiaoTiHei-2.ttf)format('woff2');
+}
 :root {
     --bgcolor:#1a1a1a;
-    --textcolor:#d4d4d4;
-    --unbgcolor:white;
+    --textcolor:#f5f5f5dd;
 }
 body,html{
+    font-family: '我的字体',sans-serif;
+    background: var(--textcolor);
     margin: 0;
     padding: 0;
     width: 100%;
+    transition: background 0.3s;
 }
 
 img{
     height: 102%;
-    box-shadow: 5px 0 7px 7px rgba(0, 0, 0, 0.5);
     border-radius: 0 15%;
-    transition: transform 1s ease;
-}
-img:hover{
     transform: scale(1.05)rotate(10deg);
-    box-shadow: 5px 0 7px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0.2rem 0 0.4rem 0.4rem var(--bgcolor);
 }
 
 h1{
     position: absolute;
     right: 2%;
+    
+    font-size: clamp(30px,3rem,4rem);
     background: linear-gradient(45deg,var(--textcolor),var(--bgcolor));
     -webkit-background-clip:text;
     -webkit-text-fill-color: transparent;
@@ -37,21 +42,24 @@ p{
 #IDcard{
     width: 100vw;
     display: flex;
-    height: 24vw;
+    height: 24vh;
     background-color: var(--bgcolor);
-    border-bottom: 5px solid var(--textcolor);
-    margin-bottom: 50px;
+    border-bottom: 0.5rem solid var(--textcolor);
+    margin-bottom: 4rem;
 }
 
 .chance{
     transform: skewX(-10deg);
-    margin: 0 0 30px 30px;
-    height: 5vw;
+    margin: 0 0 3rem 3rem;
+    height: clamp(30px,5vw,3rem);
     width: 80vw;
+    height: 3rem;
+    border-radius: 0.2rem;
     display: flex;
     align-items: center;
+    cursor: pointer;
     background-color: var(--bgcolor);
-    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0.2rem 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
 }
 
 .option{

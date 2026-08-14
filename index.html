@@ -10,12 +10,12 @@
 </head>
 <body>
     <div id="IDcard">
-        <img src="1786426457962.jpg" alt="头像" style="display: inline-block;">
+        <img src="1786426457962.png" alt="头像" style="display: inline-block;">
         <h1 style="display: inline;">Rubserniv</h1>
     </div>
     <div class="chance">
         <div class="option"></div>
-        <p>55</p>
+        <p>换颜色</p>
     </div>
     <div class="chance">
         <div class="option"></div>
@@ -25,5 +25,16 @@
         <div class="option"></div>
         <p>55</p>
     </div>
+    <script>
+        const root = document.documentElement;
+        document.querySelectorAll(".chance").forEach(el => {
+            el.addEventListener('click',function(){
+                const color1 = getComputedStyle(root).getPropertyValue('--bgcolor').trim();
+                const color2 = getComputedStyle(root).getPropertyValue('--textcolor').trim();                 
+                root.style.setProperty('--bgcolor',color2);
+                root.style.setProperty('--textcolor', color1);
+        });
+    });
+    </script>
 </body>
 </html>
