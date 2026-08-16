@@ -9,32 +9,63 @@
     <title>Rubserniv</title>
 </head>
 <body>
-    <div id="IDcard">
-        <img src="1786426457962.png" alt="头像" style="display: inline-block;">
-        <h1 style="display: inline;">Rubserniv</h1>
-    </div>
-    <div class="chance">
-        <div class="option"></div>
-        <p>换颜色</p>
-    </div>
-    <div class="chance">
-        <div class="option"></div>
-        <p>55</p>
-    </div>
-    <div class="chance">
-        <div class="option"></div>
-        <p>55</p>
+        <div id="IDcard">
+            <img src="1786426457962.png" alt="头像" style="display: inline-block;">
+            <h1 style="display: inline;">Rubserniv</h1>
+        </div>
+        <div class="stars">
+            <div class="chance">
+                <div class="option"></div>
+                <p>换颜色</p>
+            </div>
+            <div class="chance">
+                <div class="option"></div>
+                <p>55</p>
+            </div>
+            <div class="chance">
+                <div class="option"></div>
+                <p>55</p>
+        </div>
     </div>
     <script>
         const root = document.documentElement;
+        // chance
         document.querySelectorAll(".chance").forEach(el => {
             el.addEventListener('click',function(){
+                if (this.querySelector('p').textContent === '换颜色') {
                 const color1 = getComputedStyle(root).getPropertyValue('--bgcolor').trim();
                 const color2 = getComputedStyle(root).getPropertyValue('--textcolor').trim();                 
                 root.style.setProperty('--bgcolor',color2);
-                root.style.setProperty('--textcolor', color1);
+                root.style.setProperty('--textcolor', color1);                    
+                }
+
+            });
         });
-    });
+        // star
+        const starsContanier = document.querySelector('.stars');
+        const starsCount = 80;
+        const myCnum = 628;
+        for (let i=0;i<starsCount;i++){
+            // position
+            const star = document.createElement('div');
+            const starStyle = star.style;
+            star.classList.add('star');
+            starStyle.left = Math.random() * 100 + '%';
+            starStyle.top = Math.random() * 100 + '%';
+            starStyle.setProperty('--duration',(Math.random()*3+2)+'s');
+            // polygon
+            const points = [];
+            for (let j = 0; j < 4 ; j++){
+                const x = Math.floor(Math.random() * 100);
+                const y = Math.floor(Math.random() * 100);
+                points.push(`${x}% ${y}%`);
+            }
+            console.log(`polygon(${points.join(',')})`);
+            starStyle.clipPath = `polygon(${points.join(',')})`;
+            // return 'polygon(${points.join(',')})';
+
+            starsContanier.appendChild(star);
+        }
     </script>
 </body>
 </html>
