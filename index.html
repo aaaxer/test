@@ -10,7 +10,7 @@
 </head>
 <body>
         <div id="IDcard">
-            <img src="1786426457962.jpg" alt="头像" style="display: inline-block;">
+            <img src="1786426457962.png" alt="头像" style="display: inline-block;">
             <h1 style="display: inline;">Rubserniv</h1>
         </div>
         <div class="stars">
@@ -49,19 +49,18 @@
             // position
             const star = document.createElement('div');
             const starStyle = star.style;
-            star.classList.add('star');
             starStyle.left = Math.random() * 100 + '%';
-            starStyle.top = Math.random() * 100 + '%';
+            starStyle.top = Math.random() * 80 + '%';
             starStyle.setProperty('--duration',(Math.random()*3+2)+'s');
+            star.classList.add('star');
             // polygon
-            const points = [];
-            for (let j = 0; j < 4 ; j++){
-                const x = Math.floor(Math.random() * 100);
-                const y = Math.floor(Math.random() * 100);
-                points.push(`${x}% ${y}%`);
-            }
-            console.log(`polygon(${points.join(',')})`);
-            starStyle.clipPath = `polygon(${points.join(',')})`;
+                // const points = [];
+                // for (let j = 0; j < 4 ; j++){
+                //     const x = Math.floor(Math.random() * 100);
+                //     const y = Math.floor(Math.random() * 50 + 50);
+                //     points.push(`${x}% ${y}%`);
+                // }
+                // starStyle.clipPath = `polygon(${points.join(',')})`;
             // return 'polygon(${points.join(',')})';
 
             starsContanier.appendChild(star);
